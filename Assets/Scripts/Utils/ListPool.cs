@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Sugarpepper
 {
-    public class SBListPool<T> where T : class
+    public class ListPool<T> where T : class
     {
         public delegate void SBListPoolReuse(T item);
         public delegate void SBListPoolUnuse(T item);
@@ -13,12 +13,12 @@ namespace Sugarpepper
         protected SBListPoolUnuse unuse = null;
         protected List<T> datas = null;
 
-        public SBListPool()
+        public ListPool()
         {
             reuse = null;
             unuse = null;
         }
-        public SBListPool(SBListPoolReuse reuse, SBListPoolUnuse unuse)
+        public ListPool(SBListPoolReuse reuse, SBListPoolUnuse unuse)
         {
             this.reuse = reuse;
             this.unuse = unuse;

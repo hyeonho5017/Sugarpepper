@@ -57,7 +57,7 @@ namespace Sugarpepper
         protected ScrollRect scrollView = null;
         protected float itemWidth = 0f;
         protected float itemHeight = 0f;
-        protected SBListPool<GameObject> itemPool = null;
+        protected ListPool<GameObject> itemPool = null;
         protected TableViewDelegate viewDelegate = null;
         protected List<object> dataSource = null;
         protected float visibleWidth = 0f;
@@ -83,7 +83,7 @@ namespace Sugarpepper
         }
         public virtual void OnStart()
         {
-            itemPool = new SBListPool<GameObject>((GameObject item) =>
+            itemPool = new ListPool<GameObject>((GameObject item) =>
             {
                 if (item == null)
                     return;
@@ -254,7 +254,7 @@ namespace Sugarpepper
             {
                 case eTableViewType.Vertical:
                 {
-                    var children = SBFunc.GetChildren(scrollView.content.gameObject);
+                    var children = Func.GetChildren(scrollView.content.gameObject);
                     var cCount = children.Length;
                     for(var i = 0; i < cCount; ++i)
                     {
@@ -275,7 +275,7 @@ namespace Sugarpepper
                 } break;
                 case eTableViewType.Horizental:
                 {
-                    var children = SBFunc.GetChildren(scrollView.content.gameObject);
+                    var children = Func.GetChildren(scrollView.content.gameObject);
                     var cCount = children.Length;
                     for (var i = 0; i < cCount; ++i)
                     {

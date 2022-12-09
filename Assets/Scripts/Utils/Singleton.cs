@@ -3,12 +3,11 @@ using UnityEngine;
 namespace Sugarpepper
 {
 	/// <summary>
-	/// Persistent singleton.
+	/// Singleton pattern.
 	/// </summary>
-	public class SBPersistentSingleton<T> : MonoBehaviour	where T : Component
+	public class Singleton<T> : MonoBehaviour	where T : Component
 	{
 		protected static T _instance;
-		protected bool _enabled;
 
 		/// <summary>
 		/// Singleton design pattern
@@ -32,31 +31,16 @@ namespace Sugarpepper
 		}
 
 	    /// <summary>
-	    /// On awake, we check if there's already a copy of the object in the scene. If there's one, we destroy it.
+	    /// On awake, we initialize our instance. Make sure to call base.Awake() in override if you need awake.
 	    /// </summary>
 	    protected virtual void Awake ()
 		{
 			if (!Application.isPlaying)
 			{
 				return;
-            }
+			}
 
-            if (_instance == null)
-			{
-				//If I am the first instance, make me the Singleton
-				_instance = this as T;
-				DontDestroyOnLoad (transform.gameObject);
-				_enabled = true;
-			}
-			else
-			{
-				//If a Singleton already exists and you find
-				//another reference in scene, destroy it!
-				if(this != _instance)
-				{
-					Destroy(this.gameObject);
-				}
-			}
+			_instance = this as T;			
 		}
 	}
 }

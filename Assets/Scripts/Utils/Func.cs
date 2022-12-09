@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Sugarpepper
 {
-    public static class SBFunc
+    public static class Func
     {
         private static readonly StringBuilder builder = new StringBuilder();
         public static string StrBuilder(params object[] arr)

@@ -98,7 +98,7 @@ namespace Sugarpepper
         }
         public static string GetTimeCompareString(int target)
         {
-            return SBFunc.TimeString(GetTimeCompare(target));
+            return Func.TimeString(GetTimeCompare(target));
         }
     }
 }
