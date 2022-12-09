@@ -9,3 +9,4 @@ UserSettings/*
 .vs/*
 .svn/*
 Packages/packages-lock.json
+UIElementsSchema/*
