@@ -1,0 +1,11 @@
+Library/*
+Temp/*
+obj/*
+Logs/*
+UserSettings/*
+.vsconfig
+*.csproj
+*.sln
+.vs/*
+.svn/*
+Packages/packages-lock.json
